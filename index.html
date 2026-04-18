@@ -13,8 +13,8 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: #fdf6e8; /* Varden - единый светлый фон */
-            color: #023149; /* Dark Azure - основной текст */
+            background-color: #fdf6e8;
+            color: #023149;
             font-family: 'Montserrat', sans-serif;
             line-height: 1.5;
             font-weight: 400;
@@ -30,7 +30,7 @@
             margin-bottom: 2.5rem;
             position: relative;
             display: inline-block;
-            color: #c5111a; /* Crimson Blaze */
+            color: #c5111a;
         }
         h2:after {
             content: '';
@@ -39,15 +39,14 @@
             left: 0;
             width: 60px;
             height: 4px;
-            background: #7d0907; /* Dark Red */
+            background: #7d0907;
             border-radius: 2px;
         }
         .section { 
             padding: 80px 0; 
             border-bottom: 1px solid rgba(2, 49, 73, 0.1);
-            background: #fdf6e8; /* Единый Varden фон */
+            background: #fdf6e8;
         }
-        /* Убираем чередование фонов */
         .section:nth-child(even) {
             background: #fdf6e8;
         }
@@ -56,8 +55,8 @@
         }
         button, .btn, .cta-btn {
             background: transparent;
-            border: 2px solid #c5111a; /* Crimson Blaze */
-            color: #023149; /* Dark Azure */
+            border: 2px solid #c5111a;
+            color: #023149;
             padding: 12px 28px;
             font-weight: 600;
             font-size: 1rem;
@@ -69,18 +68,18 @@
             font-family: 'Montserrat', sans-serif;
         }
         .btn-primary { 
-            background: #c5111a; /* Crimson Blaze */
+            background: #c5111a;
             border-color: #c5111a;
-            color: #fdf6e8; /* Varden */
+            color: #fdf6e8;
         }
         .btn-primary:hover { 
-            background: #7d0907; /* Dark Red */
+            background: #7d0907;
             border-color: #7d0907;
             color: #fdf6e8;
             box-shadow: 0 0 15px rgba(197, 17, 26, 0.5);
         }
         .btn-outline:hover { 
-            background: #c5111a; /* Crimson Blaze */
+            background: #c5111a;
             border-color: #c5111a;
             color: #fdf6e8;
             box-shadow: 0 0 12px rgba(197, 17, 26, 0.4);
@@ -90,7 +89,7 @@
             display: flex; 
             align-items: center; 
             padding: 40px 0;
-            background: #fdf6e8; /* Чистый Varden */
+            background: #fdf6e8;
         }
         .hero-grid { 
             display: flex; 
@@ -105,8 +104,8 @@
             width: 280px; 
             height: 280px; 
             border-radius: 50%;
-            background: #fdf6e8; /* Varden */
-            border: 4px solid #689abb; /* Blue Marble - акцент на фото */
+            background: #fdf6e8;
+            border: 4px solid #689abb;
             display: flex; 
             align-items: center; 
             justify-content: center;
@@ -128,16 +127,16 @@
             right: 24px; 
             display: flex; 
             gap: 8px;
-            background: rgba(253, 246, 232, 0.95); /* Varden */
+            background: rgba(253, 246, 232, 0.95);
             padding: 6px 12px; 
             border-radius: 40px; 
             backdrop-filter: blur(4px);
-            border: 2px solid #689abb; /* Blue Marble - акцент */
+            border: 2px solid #689abb;
         }
         .lang-btn {
             background: none; 
             border: none; 
-            color: #023149; /* Dark Azure */
+            color: #023149;
             font-weight: 600; 
             padding: 4px 8px;
             cursor: pointer; 
@@ -147,33 +146,33 @@
         }
         .lang-btn.active { 
             opacity: 1; 
-            color: #c5111a; /* Crimson Blaze */
+            color: #c5111a;
             font-weight: 700;
         }
         .lang-btn:disabled { opacity: 0.5; cursor: default; }
         .hero h1 { 
             font-size: 3.5rem; 
             margin-bottom: 8px;
-            color: #023149; /* Dark Azure */
+            color: #023149;
         }
         .hero .tagline { 
-            font-size: 1.5rem; 
+            font-size: 1.4rem;
             font-weight: 600; 
             margin-bottom: 20px; 
-            color: #c5111a; /* Crimson Blaze */
+            color: #c5111a;
         }
         .hero .sub { 
-            font-size: 1.2rem; 
+            font-size: 1rem;
             margin-bottom: 32px; 
             max-width: 700px; 
             font-weight: 400;
-            color: #023149; /* Dark Azure */
+            color: #023149;
         }
         .cta-group { display: flex; flex-wrap: wrap; gap: 16px; }
         .about-text p { 
             margin-bottom: 1.2rem; 
-            font-size: 1.1rem;
-            color: #023149; /* Dark Azure */
+            font-size: 1rem;
+            color: #023149;
         }
         
         /* Карусель достижений */
@@ -206,15 +205,16 @@
         .fact-item {
             flex: 0 0 auto;
             width: 320px;
-            background: #fdf6e8; /* Varden */
+            background: #fdf6e8;
             padding: 24px 28px;
             border-radius: 20px;
-            border: 2px solid #689abb; /* Blue Marble - акцент */
-            border-left: 6px solid #c5111a; /* Crimson Blaze */
+            border: 2px solid #689abb;
+            border-left: 6px solid #c5111a;
             font-weight: 500;
-            color: #023149; /* Dark Azure */
+            color: #023149;
             transition: transform 0.2s, box-shadow 0.2s;
             user-select: none;
+            font-size: 1rem;
         }
         .fact-item:hover {
             transform: translateY(-4px);
@@ -225,7 +225,7 @@
             text-align: center;
             margin-top: 15px;
             font-size: 0.85rem;
-            color: #7d0907; /* Dark Red */
+            color: #7d0907;
             opacity: 0.8;
             display: flex;
             align-items: center;
@@ -246,50 +246,51 @@
             gap: 40px; 
         }
         .skill-block h3 {
-            font-size: 1rem; 
+            font-size: 1.4rem;
             font-weight: 700; 
             margin-bottom: 20px; 
-            color: #7d0907; /* Dark Red */
+            color: #7d0907;
         }
         .portfolio-subheading {
-            font-size: 1rem;
+            font-size: 1.4rem;
             font-weight: 700;
             margin: 40px 0 24px;
-            color: #023149; /* Dark Azure */
+            color: #023149;
         }
         .section#portfolio .portfolio-subheading:first-of-type {
             margin-top: 0;
         }
         .methodology-list { display: flex; flex-wrap: wrap; gap: 12px; }
         .method-tag {
-            background: rgba(197, 17, 26, 0.1); /* Crimson Blaze */
+            background: rgba(197, 17, 26, 0.1);
             border: 2px solid rgba(197, 17, 26, 0.3);
             padding: 8px 18px; 
             border-radius: 40px; 
             font-weight: 500; 
-            color: #7d0907; /* Dark Red */
+            color: #7d0907;
+            font-size: 1rem;
         }
         .tools-category { margin-bottom: 24px; }
         .tools-category h4 { 
-            font-size: 1.1rem; 
+            font-size: 1.1rem;
             margin-bottom: 12px; 
-            color: #c5111a; /* Crimson Blaze */
+            color: #c5111a;
             font-weight: 700; 
         }
         .tool-tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .tool-tag {
-            background: rgba(104, 154, 187, 0.15); /* Blue Marble - акцент контейнера */
+            background: rgba(104, 154, 187, 0.15);
             padding: 6px 16px; 
             border-radius: 30px;
-            font-size: 0.95rem; 
+            font-size: 1rem;
             border: 1px solid rgba(104, 154, 187, 0.3);
-            color: #023149; /* Dark Azure */
+            color: #023149;
         }
         .accordion-case {
             margin-bottom: 20px; 
-            background: #fdf6e8; /* Varden */
+            background: #fdf6e8;
             border-radius: 24px;
-            border: 2px solid #689abb; /* Blue Marble - акцент */
+            border: 2px solid #689abb;
             transition: all 0.2s;
         }
         .accordion-case:hover { 
@@ -306,46 +307,47 @@
             transition: background 0.2s;
         }
         .case-header:hover { 
-            background: rgba(104, 154, 187, 0.1); /* Blue Marble */
+            background: rgba(104, 154, 187, 0.1);
         }
         .case-title-section h3 { 
             font-size: 1.8rem; 
             margin-bottom: 6px;
-            color: #023149; /* Dark Azure */
+            color: #023149;
         }
         .case-meta {
             display: flex; 
             flex-wrap: wrap; 
             gap: 16px; 
-            color: #7d0907; /* Dark Red */
-            font-size: 0.95rem; 
+            color: #7d0907;
+            font-size: 0.95rem;
             margin-top: 4px; 
             font-weight: 400;
         }
         .case-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
         .case-tag {
-            background: #c5111a; /* Crimson Blaze */
-            color: #fdf6e8; /* Varden */
+            background: #c5111a;
+            color: #fdf6e8;
             padding: 4px 14px; 
             border-radius: 30px;
-            font-size: 0.8rem; 
+            font-size: 1rem;
             font-weight: 600;
         }
         .case-description { 
             margin-top: 10px; 
-            color: #023149; /* Dark Azure */
+            color: #023149;
             font-style: normal; 
+            font-size: 1rem;
         }
         .accordion-icon { 
             font-size: 1.8rem; 
-            color: #689abb; /* Blue Marble - акцент */
+            color: #689abb;
             margin-left: 20px; 
             transition: transform 0.3s; 
         }
         .case-content {
             padding: 0 28px 28px 28px; 
             display: none; 
-            border-top: 2px solid rgba(104, 154, 187, 0.4); /* Blue Marble */
+            border-top: 2px solid rgba(104, 154, 187, 0.4);
         }
         .case-content.active { display: block; }
         .case-detail-grid {
@@ -355,12 +357,12 @@
             margin: 20px 0;
         }
         .detail-item h4 { 
-            color: #689abb; /* Blue Marble - акцент */
+            color: #689abb;
             margin-bottom: 8px; 
-            font-size: 1.1rem; 
+            font-size: 1.3rem; 
         }
         .case-content h4 {
-            color: #689abb; /* Blue Marble - акцент */
+            color: #689abb;
             margin: 20px 0 12px; 
             font-size: 1.3rem;
         }
@@ -370,70 +372,54 @@
             padding-left: 24px; 
             position: relative; 
             font-weight: 400;
-            color: #023149; /* Dark Azure */
+            color: #023149;
+            font-size: 1rem;
         }
         .process-steps li:before { 
             content: "▹"; 
-            color: #689abb; /* Blue Marble - акцент */
+            color: #689abb;
             position: absolute; 
             left: 0; 
+        }
+        .case-content p {
+            font-size: 1rem;
         }
         .material-link {
             display: inline-block; 
             margin: 15px 0 10px; 
-            color: #689abb; /* Blue Marble - акцент */
+            color: #689abb;
             text-decoration: none; 
             border-bottom: 2px dashed #689abb;
             cursor: pointer;
+            font-size: 1rem;
         }
         .material-link:hover {
             color: #023149;
         }
         .testimonial {
-            background: rgba(104, 154, 187, 0.12); /* Blue Marble - акцент */
+            background: rgba(104, 154, 187, 0.12);
             padding: 20px; 
             border-radius: 16px;
             font-style: italic; 
             margin-top: 10px;
-            color: #023149; /* Dark Azure */
-            border-left: 4px solid #689abb; /* Blue Marble */
+            color: #023149;
+            border-left: 4px solid #689abb;
+            font-size: 1rem;
         }
         
-        /* Другие работы - карусель как достижения */
-        .other-works-carousel {
+        /* Другие работы - сетка из двух колонок */
+        .other-works-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
             margin-top: 24px;
-            position: relative;
-            overflow: hidden;
-        }
-        .other-works-wrapper {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            cursor: grab;
-            padding: 10px 0 20px;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        .other-works-wrapper::-webkit-scrollbar {
-            display: none;
-        }
-        .other-works-wrapper:active {
-            cursor: grabbing;
-        }
-        .other-works-wrapper.dragging {
-            scroll-behavior: auto;
-            cursor: grabbing;
         }
         .work-card {
-            flex: 0 0 auto;
-            width: 340px;
-            background: #fdf6e8; /* Varden */
+            background: #fdf6e8;
             padding: 24px 28px;
             border-radius: 20px;
-            border: 2px solid #689abb; /* Blue Marble - акцент */
-            border-left: 6px solid #c5111a; /* Crimson Blaze */
+            border: 2px solid #689abb;
+            border-left: 6px solid #c5111a;
             transition: transform 0.2s, box-shadow 0.2s;
             cursor: pointer;
             user-select: none;
@@ -444,36 +430,36 @@
             border-color: #689abb;
         }
         .work-card h4 { 
-            font-size: 1.6rem; 
+            font-size: 1.8rem;
             margin-bottom: 8px; 
             font-weight: 700;
-            color: #023149; /* Dark Azure */
+            color: #023149;
         }
         .work-meta {
             display: flex; 
             flex-wrap: wrap; 
             gap: 16px; 
-            color: #7d0907; /* Dark Red */
-            font-size: 0.9rem; 
+            color: #7d0907;
+            font-size: 0.95rem;
             margin-top: 4px; 
             font-weight: 400;
         }
         .work-card .case-tags { margin: 12px 0 12px; }
         .work-description { 
             margin-top: 10px; 
-            color: #023149; /* Dark Azure */
+            color: #023149;
             font-style: normal;
-            font-size: 0.95rem;
+            font-size: 1rem;
             line-height: 1.5;
         }
         .work-material-link {
             display: inline-block; 
             margin-top: 15px; 
-            color: #689abb; /* Blue Marble - акцент */
+            color: #689abb;
             text-decoration: none; 
             border-bottom: 2px dashed #689abb;
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
         .work-material-link:hover {
             color: #023149;
@@ -491,7 +477,7 @@
             left: 5%; 
             right: 5%; 
             height: 3px;
-            background: rgba(104, 154, 187, 0.4); /* Blue Marble - акцент */
+            background: rgba(104, 154, 187, 0.4);
             z-index: 0;
         }
         .roadmap-step { 
@@ -504,8 +490,8 @@
         .step-marker {
             width: 60px; 
             height: 60px; 
-            background: #fdf6e8; /* Varden */
-            border: 3px solid #689abb; /* Blue Marble - акцент */
+            background: #fdf6e8;
+            border: 3px solid #689abb;
             border-radius: 50%; 
             display: flex; 
             align-items: center; 
@@ -513,11 +499,11 @@
             margin: 0 auto 20px; 
             font-weight: 700; 
             font-size: 1.8rem; 
-            color: #023149; /* Dark Azure */
+            color: #023149;
             transition: all 0.2s;
         }
         .roadmap-step:hover .step-marker { 
-            background: #689abb; /* Blue Marble */
+            background: #689abb;
             color: #fdf6e8;
             box-shadow: 0 0 20px rgba(104, 154, 187, 0.5);
         }
@@ -525,11 +511,11 @@
             font-size: 1.4rem; 
             font-weight: 700; 
             margin-bottom: 8px;
-            color: #7d0907; /* Dark Red */
+            color: #7d0907;
         }
         .step-desc { 
-            font-size: 0.95rem; 
-            color: #023149; /* Dark Azure */
+            font-size: 1rem; 
+            color: #023149;
             font-weight: 400;
         }
         .help-grid { 
@@ -538,9 +524,9 @@
             gap: 20px; 
         }
         .help-accordion {
-            background: #fdf6e8; /* Varden */
+            background: #fdf6e8;
             border-radius: 20px;
-            border: 2px solid #689abb; /* Blue Marble - акцент */
+            border: 2px solid #689abb;
             transition: border-color 0.2s;
         }
         .help-accordion:hover { 
@@ -556,29 +542,33 @@
             border-radius: 20px;
         }
         .help-header:hover { 
-            background: rgba(104, 154, 187, 0.1); /* Blue Marble */
+            background: rgba(104, 154, 187, 0.1);
         }
         .help-header h3 { 
             font-size: 1.3rem; 
             font-weight: 700;
-            color: #023149; /* Dark Azure */
+            color: #023149;
         }
         .help-sub { 
-            font-size: 0.9rem; 
-            color: #7d0907; /* Dark Red */
+            font-size: 0.95rem; 
+            color: #7d0907;
             margin-top: 4px; 
             font-weight: 400; 
         }
         .help-content {
             padding: 0 24px 24px 24px; 
             display: none; 
-            border-top: 2px solid #689abb; /* Blue Marble */
+            border-top: 2px solid #689abb;
             font-weight: 400;
-            color: #023149; /* Dark Azure */
+            color: #023149;
+            font-size: 1rem;
+        }
+        .help-content p {
+            margin-top: 16px;
         }
         .help-accordion .accordion-icon {
             font-size: 1.6rem; 
-            color: #689abb; /* Blue Marble - акцент */
+            color: #689abb;
             margin-left: 16px; 
             transition: transform 0.3s;
         }
@@ -589,18 +579,24 @@
             align-items: flex-start; 
         }
         .contact-info { 
-            font-size: 1.2rem;
-            color: #023149; /* Dark Azure */
+            font-size: 1rem;
+            color: #023149;
         }
         .contact-info i { 
             width: 32px; 
-            color: #689abb; /* Blue Marble - акцент */
+            color: #689abb;
         }
         .contact-item { 
             margin-bottom: 20px; 
             display: flex; 
             align-items: center; 
             font-weight: 400; 
+            font-size: 1rem;
+        }
+        .contact-info p {
+            font-size: 1rem;
+            margin-bottom: 24px;
+            font-weight: 400;
         }
         .resume-btn { margin-top: 20px; }
         @media (max-width: 800px) {
@@ -630,7 +626,7 @@
             .help-grid { grid-template-columns: 1fr; }
             .case-detail-grid { grid-template-columns: 1fr; }
             .fact-item { width: 280px; }
-            .work-card { width: 300px; }
+            .other-works-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 480px) {
             .container { padding: 0 16px; } 
@@ -638,13 +634,13 @@
             .hero { min-height: auto; } 
             .cta-group .btn { padding: 10px 18px; }
             .fact-item { width: 260px; padding: 20px 24px; }
-            .work-card { width: 280px; padding: 20px 24px; }
+            .work-card { padding: 20px 24px; }
             .work-card h4 { font-size: 1.4rem; }
         }
         .footer-note { 
             text-align: center; 
             padding: 30px 0; 
-            color: #7d0907; /* Dark Red */
+            color: #7d0907;
             opacity: 0.8; 
             font-size: 0.9rem; 
             font-weight: 400; 
@@ -708,10 +704,73 @@
     <section class="section">
         <h2 data-i18n="skills.title">Навыки и инструменты</h2>
         <div class="skills-two-col">
+            <!-- Левый блок: Скиллсет -->
             <div class="skill-block">
-                <h3 data-i18n="skills.methodologies">Методологии</h3>
-                <div class="methodology-list" data-i18n="skills.methods">ADDIE,SAM,4C/ID,Bloom-Anderson,Design Thinking</div>
+                <h3>Скиллсет</h3>
+                <div style="display: flex; flex-direction: column; gap: 24px;">
+                    <!-- Методология и проектирование -->
+                    <div class="tools-category">
+                        <h4>Методология и проектирование</h4>
+                        <div class="tool-tags">
+                            <span class="tool-tag">ADDIE</span>
+                            <span class="tool-tag">SAM</span>
+                            <span class="tool-tag">4C/ID</span>
+                            <span class="tool-tag">Таксономия Блума–Андерсона</span>
+                            <span class="tool-tag">SMART-цели</span>
+                            <span class="tool-tag">Андрагогика</span>
+                            <span class="tool-tag">Instructional Design</span>
+                            <span class="tool-tag">CEFR</span>
+                        </div>
+                    </div>
+                    <!-- Архитектура курса -->
+                    <div class="tools-category">
+                        <h4>Архитектура курса</h4>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Ветвлённые сценарии</span>
+                            <span class="tool-tag">Microlearning</span>
+                            <span class="tool-tag">Chunking</span>
+                            <span class="tool-tag">Геймификация</span>
+                        </div>
+                    </div>
+                    <!-- Анализ и исследования -->
+                    <div class="tools-category">
+                        <h4>Анализ и исследования</h4>
+                        <div class="tool-tags">
+                            <span class="tool-tag">UX-интервью с ЦА</span>
+                            <span class="tool-tag">Конкурентный анализ</span>
+                            <span class="tool-tag">Фасилитация сессий с SME</span>
+                        </div>
+                    </div>
+                    <!-- Оценка обучения -->
+                    <div class="tools-category">
+                        <h4>Оценка обучения</h4>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Психометрика</span>
+                            <span class="tool-tag">CAA Rubrics</span>
+                            <span class="tool-tag">Модель Киркпатрика</span>
+                        </div>
+                    </div>
+                    <!-- Документирование -->
+                    <div class="tools-category">
+                        <h4>Документирование</h4>
+                        <div class="tool-tags">
+                            <span class="tool-tag">ТЗ для видео и графики</span>
+                            <span class="tool-tag">Гайды для авторов и дизайнеров</span>
+                        </div>
+                    </div>
+                    <!-- Нормативная база -->
+                    <div class="tools-category">
+                        <h4>Нормативная база</h4>
+                        <div class="tool-tags">
+                            <span class="tool-tag">ФГОС НОО</span>
+                            <span class="tool-tag">ФГОС ООО</span>
+                            <span class="tool-tag">ФГОС СОО</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- Правый блок: Инструменты -->
             <div class="skill-block">
                 <h3 data-i18n="skills.tools">Инструменты</h3>
                 <div class="tools-category"><h4 data-i18n="skills.design">Проектирование</h4><div class="tool-tags" data-i18n="skills.design_tools">Miro,FigJam,SBoard,XMind</div></div>
@@ -766,7 +825,7 @@
         <div class="accordion-case">
             <div class="case-header" data-target="case2">
                 <div class="case-title-section">
-                    <h3>Highland Gold (Areal)</h3>
+                    <h3>Highland Gold (Ареал)</h3>
                     <div class="case-meta"><span data-i18n="case2.date">октябрь – декабрь 2025</span></div>
                     <div class="case-tags"><span class="case-tag" data-i18n="case2.tag1">Разработка с нуля</span><span class="case-tag" data-i18n="case2.tag2">Детское образование</span><span class="case-tag" data-i18n="case2.tag3">Профориентация</span></div>
                     <div class="case-description" data-i18n="case2.desc">Профориентационная программа для школьников горно-металлургической отрасли</div>
@@ -799,7 +858,7 @@
         <div class="accordion-case">
             <div class="case-header" data-target="case3">
                 <div class="case-title-section">
-                    <h3>HSE University</h3>
+                    <h3>ВШЭ</h3>
                     <div class="case-meta"><span data-i18n="case3.date">март – апрель 2026</span></div>
                     <div class="case-tags"><span class="case-tag" data-i18n="case3.tag1">Разработка контента</span><span class="case-tag" data-i18n="case3.tag2">Высшее образование</span><span class="case-tag" data-i18n="case3.tag3">IT / ИИ</span></div>
                     <div class="case-description" data-i18n="case3.desc">Доработка и адаптация онлайн-курса по использованию ИИ</div>
@@ -830,23 +889,21 @@
 
         <h3 class="portfolio-subheading" data-i18n="portfolio.other">Другие работы</h3>
         
-        <!-- Карусель других работ -->
-        <div class="other-works-carousel">
-            <div class="other-works-wrapper" id="otherWorksCarousel">
-                <div class="work-card" onclick="alert('Skillbox details')">
-                    <h4>Skillbox</h4>
-                    <div class="work-meta"><span data-i18n="other1.date">октябрь – декабрь 2025</span></div>
-                    <div class="case-tags"><span class="case-tag" data-i18n="other1.tag1">Рефакторинг</span><span class="case-tag" data-i18n="other1.tag2">EdTech</span><span class="case-tag" data-i18n="other1.tag3">Цифровая трансформация</span></div>
-                    <div class="work-description" data-i18n="other1.desc">Рефакторинг курса «Лидер цифровой трансформации»: аудит, методические рекомендации, пересборка модуля.</div>
-                    <a class="work-material-link" href="https://disk.yandex.ru/d/nSnB02v2zEnLpA" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-folder-open" style="color: #689abb;"></i> <span data-i18n="case.open_materials">Открыть материалы →</span></a>
-                </div>
-                <div class="work-card" onclick="alert('Central University details')">
-                    <h4>Central University</h4>
-                    <div class="work-meta"><span data-i18n="other2.date">март – май 2026</span></div>
-                    <div class="case-tags"><span class="case-tag" data-i18n="other2.tag1">Аналитика</span><span class="case-tag" data-i18n="other2.tag2">Высшее образование</span><span class="case-tag" data-i18n="other2.tag3">IT-образование</span></div>
-                    <div class="work-description" data-i18n="other2.desc">Сравнительный анализ программ зарубежных IT-вузов, отчёт с визуализациями и гипотезами.</div>
-                    <a class="work-material-link" href="https://disk.yandex.ru/d/ApRcYpqRJTWRXA" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-folder-open" style="color: #689abb;"></i> <span data-i18n="case.open_materials">Открыть материалы →</span> (soon)</a>
-                </div>
+        <!-- Сетка других работ (2 колонки) -->
+        <div class="other-works-grid">
+            <div class="work-card" onclick="alert('Skillbox details')">
+                <h4>Skillbox</h4>
+                <div class="work-meta"><span data-i18n="other1.date">октябрь – декабрь 2025</span></div>
+                <div class="case-tags"><span class="case-tag" data-i18n="other1.tag1">Рефакторинг</span><span class="case-tag" data-i18n="other1.tag2">EdTech</span><span class="case-tag" data-i18n="other1.tag3">Цифровая трансформация</span></div>
+                <div class="work-description" data-i18n="other1.desc">Рефакторинг курса «Лидер цифровой трансформации»: аудит, методические рекомендации, пересборка модуля.</div>
+                <a class="work-material-link" href="https://disk.yandex.ru/d/nSnB02v2zEnLpA" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-folder-open" style="color: #689abb;"></i> <span data-i18n="case.open_materials">Открыть материалы →</span></a>
+            </div>
+            <div class="work-card" onclick="alert('Central University details')">
+                <h4>Центральный университет</h4>
+                <div class="work-meta"><span data-i18n="other2.date">март – май 2026</span></div>
+                <div class="case-tags"><span class="case-tag" data-i18n="other2.tag1">Аналитика</span><span class="case-tag" data-i18n="other2.tag2">Высшее образование</span><span class="case-tag" data-i18n="other2.tag3">IT-образование</span></div>
+                <div class="work-description" data-i18n="other2.desc">Сравнительный анализ программ зарубежных IT-вузов, отчёт с визуализациями и гипотезами.</div>
+                <a class="work-material-link" href="https://disk.yandex.ru/d/ApRcYpqRJTWRXA" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-folder-open" style="color: #689abb;"></i> <span data-i18n="case.open_materials">Открыть материалы →</span> (soon)</a>
             </div>
         </div>
     </section>
@@ -875,7 +932,7 @@
         <h2 data-i18n="contact.title">Контакты</h2>
         <div class="contact-flex">
             <div class="contact-info">
-                <p style="font-size:1.4rem; margin-bottom:24px; font-weight:400;" data-i18n="contact.text">Есть проект или открытая позиция? Напишите мне — отвечаю быстро.</p>
+                <p data-i18n="contact.text">Есть проект или открытая позиция? Напишите мне — отвечаю быстро.</p>
                 <div class="contact-item"><i class="fas fa-phone-alt"></i> <span>+7 (977) 110-86-61</span></div>
                 <div class="contact-item"><i class="fas fa-envelope"></i> <span>kartashevm-edtech@yandex.ru</span></div>
                 <div class="contact-item"><i class="fab fa-telegram-plane"></i> <span>@mash1naa</span></div>
@@ -905,8 +962,6 @@
             'about.fact3': 'Курс Eduson для методистов',
             'about.fact4': '6 лет в преподавании и корпоративном обучении',
             'skills.title': 'Навыки и инструменты',
-            'skills.methodologies': 'Методологии',
-            'skills.methods': 'ADDIE,SAM,4C/ID,Bloom-Anderson,Design Thinking',
             'skills.tools': 'Инструменты',
             'skills.design': 'Проектирование',
             'skills.design_tools': 'Miro,FigJam,SBoard,XMind',
@@ -1028,8 +1083,6 @@
             'about.fact3': 'Eduson course for methodologists',
             'about.fact4': '6 years in teaching and corporate training',
             'skills.title': 'Skills & Tools',
-            'skills.methodologies': 'Methodologies',
-            'skills.methods': 'ADDIE,SAM,4C/ID,Bloom-Anderson,Design Thinking',
             'skills.tools': 'Tools',
             'skills.design': 'Design & Structure',
             'skills.design_tools': 'Miro,FigJam,SBoard,XMind',
@@ -1204,6 +1257,21 @@
     function switchLanguage(lang) {
         applyLanguage(lang);
         renderHelpAccordions(lang);
+        
+        // Меняем названия кейсов в зависимости от языка
+        const case2Title = document.querySelector('.accordion-case:nth-of-type(2) .case-title-section h3');
+        const case3Title = document.querySelector('.accordion-case:nth-of-type(3) .case-title-section h3');
+        const workCard2Title = document.querySelector('.other-works-grid .work-card:last-child h4');
+        
+        if (lang === 'ru') {
+            if (case2Title) case2Title.textContent = 'Highland Gold (Ареал)';
+            if (case3Title) case3Title.textContent = 'ВШЭ';
+            if (workCard2Title) workCard2Title.textContent = 'Центральный университет';
+        } else {
+            if (case2Title) case2Title.textContent = 'Highland Gold (Areal)';
+            if (case3Title) case3Title.textContent = 'HSE University';
+            if (workCard2Title) workCard2Title.textContent = 'Central University';
+        }
     }
 
     function initCarouselDrag() {
@@ -1257,62 +1325,10 @@
         }, {passive: true});
     }
 
-    function initOtherWorksCarouselDrag() {
-        const slider = document.getElementById('otherWorksCarousel');
-        if (!slider) return;
-        
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        slider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            slider.classList.add('dragging');
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
-
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.classList.remove('dragging');
-        });
-
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.classList.remove('dragging');
-        });
-
-        slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2;
-            slider.scrollLeft = scrollLeft - walk;
-        });
-
-        slider.addEventListener('touchstart', (e) => {
-            isDown = true;
-            startX = e.touches[0].pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        }, {passive: true});
-
-        slider.addEventListener('touchend', () => {
-            isDown = false;
-        });
-
-        slider.addEventListener('touchmove', (e) => {
-            if (!isDown) return;
-            const x = e.touches[0].pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2;
-            slider.scrollLeft = scrollLeft - walk;
-        }, {passive: true});
-    }
-
     document.addEventListener('DOMContentLoaded', () => {
         applyLanguage('ru');
         renderHelpAccordions('ru');
         initCarouselDrag();
-        initOtherWorksCarouselDrag();
 
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', () => {
