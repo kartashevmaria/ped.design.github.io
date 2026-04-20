@@ -73,10 +73,10 @@
             color: #fdf6e8;
         }
         .btn-primary:hover { 
-            background: #7d0907;
-            border-color: #7d0907;
-            color: #fdf6e8;
-            box-shadow: 0 0 15px rgba(197, 17, 26, 0.5);
+            background: transparent;
+            color: #023149;
+            border-color: #c5111a;
+            box-shadow: 0 0 12px rgba(197, 17, 26, 0.4);
         }
         .btn-outline:hover { 
             background: #c5111a;
@@ -168,7 +168,28 @@
             font-weight: 400;
             color: #023149;
         }
-        .cta-group { display: flex; flex-wrap: wrap; gap: 16px; }
+        .cta-group { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 16px; 
+            align-items: center; 
+        }
+        .resume-btn-wrapper {
+            width: 100%;
+        }
+        @media (max-width: 800px) {
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .cta-group .btn {
+                width: 100%;
+                text-align: center;
+            }
+            .resume-btn-wrapper .btn {
+                width: 100%;
+            }
+        }
         .about-text p { 
             margin-bottom: 1.2rem; 
             font-size: 1rem;
@@ -215,11 +236,35 @@
             transition: transform 0.2s, box-shadow 0.2s;
             user-select: none;
             font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .fact-item:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 25px rgba(104, 154, 187, 0.25);
             border-color: #689abb;
+        }
+        .fact-item-content {
+            flex: 1;
+        }
+        .fact-item .cert-link {
+            margin-top: 16px;
+            display: inline-block;
+            color: #689abb;
+            text-decoration: none;
+            border-bottom: 2px dashed #689abb;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            width: fit-content;
+        }
+        .fact-item .cert-link i {
+            margin-right: 8px;
+            color: #689abb;
+        }
+        .fact-item .cert-link:hover {
+            color: #023149;
         }
         .carousel-hint {
             text-align: center;
@@ -392,6 +437,11 @@
             border-bottom: 2px dashed #689abb;
             cursor: pointer;
             font-size: 1rem;
+            width: fit-content;
+        }
+        .material-link i {
+            margin-right: 8px;
+            color: #689abb;
         }
         .material-link:hover {
             color: #023149;
@@ -407,14 +457,36 @@
             font-size: 1rem;
         }
         
-        /* Другие работы - сетка из двух колонок */
-        .other-works-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
+        /* Карусель для других работ */
+        .other-works-carousel {
             margin-top: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .other-works-wrapper {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            cursor: grab;
+            padding: 10px 0 20px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .other-works-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        .other-works-wrapper:active {
+            cursor: grabbing;
+        }
+        .other-works-wrapper.dragging {
+            scroll-behavior: auto;
+            cursor: grabbing;
         }
         .work-card {
+            flex: 0 0 auto;
+            width: 340px;
             background: #fdf6e8;
             padding: 24px 28px;
             border-radius: 20px;
@@ -423,6 +495,8 @@
             transition: transform 0.2s, box-shadow 0.2s;
             cursor: pointer;
             user-select: none;
+            display: flex;
+            flex-direction: column;
         }
         .work-card:hover {
             transform: translateY(-4px);
@@ -444,7 +518,13 @@
             margin-top: 4px; 
             font-weight: 400;
         }
-        .work-card .case-tags { margin: 12px 0 12px; }
+        .work-card .case-tags { 
+            margin: 12px 0 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start;
+        }
         .work-description { 
             margin-top: 10px; 
             color: #023149;
@@ -460,9 +540,32 @@
             border-bottom: 2px dashed #689abb;
             cursor: pointer;
             font-size: 1rem;
+            width: fit-content;
+        }
+        .work-material-link i {
+            margin-right: 8px;
+            color: #689abb;
         }
         .work-material-link:hover {
             color: #023149;
+        }
+        .nda-badge {
+            margin-top: 15px;
+            color: #7d0907;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nda-badge i {
+            color: #c5111a;
+        }
+        .coming-soon {
+            margin-top: 15px;
+            color: #7d0907;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
         
         .roadmap { 
@@ -598,45 +701,6 @@
             margin-bottom: 24px;
             font-weight: 400;
         }
-        .resume-btn { margin-top: 20px; }
-        @media (max-width: 800px) {
-            h1 { font-size: 2.5rem; } 
-            h2 { font-size: 1.8rem; }
-            .skills-two-col { grid-template-columns: 1fr; gap: 20px; }
-            .hero-grid { flex-direction: column-reverse; }
-            .hero-image .photo-placeholder { width: 220px; height: 220px; }
-            .lang-switch { top: 12px; right: 12px; }
-            .roadmap { flex-direction: column; gap: 24px; }
-            .roadmap-line { display: none; }
-            .roadmap-step {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 8px;
-            }
-            .step-marker {
-                margin: 0 0 8px 0;
-                width: 60px;
-                height: 60px;
-                font-size: 1.8rem;
-                flex-shrink: 0;
-            }
-            .step-title { margin-bottom: 4px; }
-            .help-grid { grid-template-columns: 1fr; }
-            .case-detail-grid { grid-template-columns: 1fr; }
-            .fact-item { width: 280px; }
-            .other-works-grid { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 480px) {
-            .container { padding: 0 16px; } 
-            .section { padding: 50px 0; }
-            .hero { min-height: auto; } 
-            .cta-group .btn { padding: 10px 18px; }
-            .fact-item { width: 260px; padding: 20px 24px; }
-            .work-card { padding: 20px 24px; }
-            .work-card h4 { font-size: 1.4rem; }
-        }
         .footer-note { 
             text-align: center; 
             padding: 30px 0; 
@@ -661,11 +725,14 @@
         <div class="hero-grid">
             <div class="hero-content">
                 <h1 data-i18n="hero.name">Мария Карташева</h1>
-                <div class="tagline" data-i18n="hero.tagline">Педагогический дизайнер: от структуры до визуала</div>
+                <div class="tagline" data-i18n="hero.tagline">Педагогический дизайнер</div>
                 <div class="sub" data-i18n="hero.sub">Проектирую учебный опыт с нуля — от анализа аудитории до готового курса. Методично, системно, красиво — и с удовольствием.</div>
                 <div class="cta-group">
                     <a href="#portfolio" class="btn btn-primary" data-i18n="hero.cta1">Смотреть работы</a>
                     <a href="#contact" class="btn btn-outline" data-i18n="hero.cta2">Связаться</a>
+                    <div class="resume-btn-wrapper">
+                        <a href="#" class="btn btn-outline" onclick="alert('Резюме (PDF) будет доступно позже'); return false;"><i class="fas fa-download"></i> <span data-i18n="contact.resume">Скачать резюме</span></a>
+                    </div>
                 </div>
             </div>
             <div class="hero-image">
@@ -692,10 +759,16 @@
                 <div class="fact-item" data-i18n="about.fact2">Магистратура ВШЭ — педагогический дизайн</div>
                 <div class="fact-item" data-i18n="about.fact3">Курс Eduson для методистов</div>
                 <div class="fact-item" data-i18n="about.fact4">6 лет в преподавании и корпоративном обучении</div>
+                <div class="fact-item">
+                    <div class="fact-item-content" data-i18n="about.vibecoding">Вайбкодинг LXD Hero</div>
+                    <a class="cert-link" href="https://disk.yandex.ru/i/6igYZMGtaelNJQ" target="_blank">
+                        <i class="fas fa-folder-open"></i> <span data-i18n="about.view_cert">Смотреть сертификат</span> →
+                    </a>
+                </div>
             </div>
             <div class="carousel-hint">
                 <i class="fas fa-arrow-right"></i>
-                <span>Листайте вправо →</span>
+                <span data-i18n="carousel.swipe">Листайте вправо →</span>
             </div>
         </div>
     </section>
@@ -706,65 +779,73 @@
         <div class="skills-two-col">
             <!-- Левый блок: Скиллсет -->
             <div class="skill-block">
-                <h3>Скиллсет</h3>
-                <div style="display: flex; flex-direction: column; gap: 24px;">
-                    <!-- Методология и проектирование -->
+                <h3 data-i18n="skills.skillset">Скиллсет</h3>
+                <div style="display: flex; flex-direction: column;">
                     <div class="tools-category">
-                        <h4>Методология и проектирование</h4>
+                        <h4 data-i18n="skills.methodology">Методология и проектирование</h4>
                         <div class="tool-tags">
                             <span class="tool-tag">ADDIE</span>
                             <span class="tool-tag">SAM</span>
                             <span class="tool-tag">4C/ID</span>
-                            <span class="tool-tag">Таксономия Блума–Андерсона</span>
+                            <span class="tool-tag" data-i18n="skills.bloom">Таксономия Блума–Андерсона</span>
                             <span class="tool-tag">SMART-цели</span>
                             <span class="tool-tag">Андрагогика</span>
                             <span class="tool-tag">Instructional Design</span>
                             <span class="tool-tag">CEFR</span>
                         </div>
                     </div>
-                    <!-- Архитектура курса -->
                     <div class="tools-category">
-                        <h4>Архитектура курса</h4>
+                        <h4 data-i18n="skills.architecture">Архитектура курса</h4>
                         <div class="tool-tags">
                             <span class="tool-tag">Ветвлённые сценарии</span>
                             <span class="tool-tag">Microlearning</span>
                             <span class="tool-tag">Chunking</span>
                             <span class="tool-tag">Геймификация</span>
+                            <span class="tool-tag">Разработка тестовых заданий</span>
+                            <span class="tool-tag">Разработка гайдов, чеклистов</span>
+                            <span class="tool-tag">Формулирование инструкций</span>
+                            <span class="tool-tag">Разработка лонг- и шорт-ридов</span>
+                            <span class="tool-tag">Разработка сценариев уроков, МК</span>
+                            <span class="tool-tag">Разработка дизайна курса</span>
                         </div>
                     </div>
-                    <!-- Анализ и исследования -->
                     <div class="tools-category">
-                        <h4>Анализ и исследования</h4>
+                        <h4 data-i18n="skills.analysis">Анализ и исследования</h4>
                         <div class="tool-tags">
                             <span class="tool-tag">UX-интервью с ЦА</span>
                             <span class="tool-tag">Конкурентный анализ</span>
                             <span class="tool-tag">Фасилитация сессий с SME</span>
+                            <span class="tool-tag">Расчет рынка (TAM, SAM, SOM)</span>
                         </div>
                     </div>
-                    <!-- Оценка обучения -->
                     <div class="tools-category">
-                        <h4>Оценка обучения</h4>
+                        <h4 data-i18n="skills.evaluation">Оценка обучения</h4>
                         <div class="tool-tags">
                             <span class="tool-tag">Психометрика</span>
                             <span class="tool-tag">CAA Rubrics</span>
                             <span class="tool-tag">Модель Киркпатрика</span>
                         </div>
                     </div>
-                    <!-- Документирование -->
                     <div class="tools-category">
-                        <h4>Документирование</h4>
+                        <h4 data-i18n="skills.documentation">Документирование</h4>
                         <div class="tool-tags">
                             <span class="tool-tag">ТЗ для видео и графики</span>
                             <span class="tool-tag">Гайды для авторов и дизайнеров</span>
                         </div>
                     </div>
-                    <!-- Нормативная база -->
                     <div class="tools-category">
-                        <h4>Нормативная база</h4>
+                        <h4 data-i18n="skills.standards">Нормативная база</h4>
                         <div class="tool-tags">
                             <span class="tool-tag">ФГОС НОО</span>
                             <span class="tool-tag">ФГОС ООО</span>
                             <span class="tool-tag">ФГОС СОО</span>
+                        </div>
+                    </div>
+                    <div class="tools-category">
+                        <h4 data-i18n="skills.additional">Дополнительно</h4>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Английский язык – C1</span>
+                            <span class="tool-tag">Вайбкодинг</span>
                         </div>
                     </div>
                 </div>
@@ -772,7 +853,7 @@
 
             <!-- Правый блок: Инструменты -->
             <div class="skill-block">
-                <h3 data-i18n="skills.tools">Инструменты</h3>
+                <h3 data-i18n="skills.tools_title">Инструменты</h3>
                 <div class="tools-category"><h4 data-i18n="skills.design">Проектирование</h4><div class="tool-tags" data-i18n="skills.design_tools">Miro,FigJam,SBoard,XMind</div></div>
                 <div class="tools-category"><h4 data-i18n="skills.visual">Дизайн</h4><div class="tool-tags" data-i18n="skills.visual_tools">Figma,Canva,Adobe Illustrator,PowerPoint</div></div>
                 <div class="tools-category"><h4 data-i18n="skills.authoring">Разработка курсов</h4><div class="tool-tags" data-i18n="skills.authoring_tools">iSpring Suite,Genially</div></div>
@@ -813,7 +894,7 @@
                 </ul>
                 <h4 data-i18n="case.tools">Инструменты</h4>
                 <p>iSpring Suite · Canva · Miro · Gemini</p>
-                <a class="material-link" href="https://disk.yandex.ru/d/eS5POu34qgN45Q" target="_blank"><i class="fas fa-folder-open" style="color: #689abb;"></i> <span data-i18n="case.open_materials">Открыть материалы →</span></a>
+                <a class="material-link" href="https://disk.yandex.ru/d/eS5POu34qgN45Q" target="_blank"><i class="fas fa-folder-open"></i> <span data-i18n="case.open_materials">Открыть материалы →</span></a>
                 <h4 data-i18n="case.feedback">Отзыв</h4>
                 <div class="testimonial" data-i18n="case1.testimonial">«…» — Екатерина Шуленина, руководитель направления ДО, Kerama Marazzi</div>
                 <h4 data-i18n="case.result">Результат</h4>
@@ -846,9 +927,7 @@
                 </ul>
                 <h4 data-i18n="case.tools">Инструменты</h4>
                 <p>Google Workspace (Docs, Slides, Drive)</p>
-                <a class="material-link" href="https://disk.yandex.ru/d/7_EOZeUcIZ_ICg" target="_blank"><i class="fas fa-folder-open" style="color: #689abb;"></i> <span data-i18n="case.open_materials">Открыть материалы →</span></a>
-                <h4 data-i18n="case.feedback">Отзыв</h4>
-                <div class="testimonial" data-i18n="case2.testimonial">«Могу отметить глубокое погружение в проект, самостоятельность…» — Араксия Манучарова, Highland Gold</div>
+                <a class="material-link" href="https://disk.yandex.ru/d/7_EOZeUcIZ_ICg" target="_blank"><i class="fas fa-folder-open"></i> <span data-i18n="case.open_materials">Открыть материалы →</span></a>
                 <h4 data-i18n="case.result">Результат</h4>
                 <p data-i18n="case2.result">Профориентационная программа с методическим пакетом, выстраивающая путь от нулевого интереса к осознанному выбору профессии, с карьерной возможностью от компании.</p>
             </div>
@@ -858,7 +937,7 @@
         <div class="accordion-case">
             <div class="case-header" data-target="case3">
                 <div class="case-title-section">
-                    <h3>ВШЭ</h3>
+                    <h3 data-i18n="case3.title">ВШЭ</h3>
                     <div class="case-meta"><span data-i18n="case3.date">март – апрель 2026</span></div>
                     <div class="case-tags"><span class="case-tag" data-i18n="case3.tag1">Разработка контента</span><span class="case-tag" data-i18n="case3.tag2">Высшее образование</span><span class="case-tag" data-i18n="case3.tag3">IT / ИИ</span></div>
                     <div class="case-description" data-i18n="case3.desc">Доработка и адаптация онлайн-курса по использованию ИИ</div>
@@ -879,9 +958,7 @@
                 </ul>
                 <h4 data-i18n="case.tools">Инструменты</h4>
                 <p>LMS Moodle · Google Workspace (Docs, Drive)</p>
-                <a class="material-link" href="https://disk.yandex.ru/d/f2-FnoJ6MnTMTQ" target="_blank"><i class="fas fa-folder-open" style="color: #689abb;"></i> <span data-i18n="case.open_materials">Открыть материалы →</span></a>
-                <h4 data-i18n="case.feedback">Отзыв</h4>
-                <div class="testimonial" data-i18n="case3.testimonial">«…» — Андреева Анастасия, куратор, НИУ ВШЭ</div>
+                <a class="material-link" href="https://disk.yandex.ru/d/f2-FnoJ6MnTMTQ" target="_blank"><i class="fas fa-folder-open"></i> <span data-i18n="case.open_materials">Открыть материалы →</span></a>
                 <h4 data-i18n="case.result">Результат</h4>
                 <p data-i18n="case3.result">Курс доработан: неактуальные сервисы заменены, формулировки универсализированы, контент приведён к единому стандарту без нарушения учебной логики.</p>
             </div>
@@ -889,21 +966,34 @@
 
         <h3 class="portfolio-subheading" data-i18n="portfolio.other">Другие работы</h3>
         
-        <!-- Сетка других работ (2 колонки) -->
-        <div class="other-works-grid">
-            <div class="work-card" onclick="alert('Skillbox details')">
-                <h4>Skillbox</h4>
-                <div class="work-meta"><span data-i18n="other1.date">октябрь – декабрь 2025</span></div>
-                <div class="case-tags"><span class="case-tag" data-i18n="other1.tag1">Рефакторинг</span><span class="case-tag" data-i18n="other1.tag2">EdTech</span><span class="case-tag" data-i18n="other1.tag3">Цифровая трансформация</span></div>
-                <div class="work-description" data-i18n="other1.desc">Рефакторинг курса «Лидер цифровой трансформации»: аудит, методические рекомендации, пересборка модуля.</div>
-                <a class="work-material-link" href="https://disk.yandex.ru/d/nSnB02v2zEnLpA" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-folder-open" style="color: #689abb;"></i> <span data-i18n="case.open_materials">Открыть материалы →</span></a>
+        <!-- Карусель других работ -->
+        <div class="other-works-carousel">
+            <div class="other-works-wrapper" id="otherWorksCarousel">
+                <div class="work-card" onclick="alert('Skillbox details')">
+                    <h4>Skillbox</h4>
+                    <div class="work-meta"><span data-i18n="other1.date">октябрь – декабрь 2025</span></div>
+                    <div class="case-tags"><span class="case-tag" data-i18n="other1.tag1">Рефакторинг</span><span class="case-tag" data-i18n="other1.tag2">EdTech</span><span class="case-tag" data-i18n="other1.tag3">Цифровая трансформация</span></div>
+                    <div class="work-description" data-i18n="other1.desc">Рефакторинг курса «Лидер цифровой трансформации»: аудит, методические рекомендации, пересборка модуля.</div>
+                    <a class="work-material-link" href="https://disk.yandex.ru/d/nSnB02v2zEnLpA" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-folder-open"></i> <span data-i18n="case.open_materials">Открыть материалы →</span></a>
+                </div>
+                <div class="work-card" onclick="alert('Central University details')">
+                    <h4 data-i18n="other2.title">Центральный университет</h4>
+                    <div class="work-meta"><span data-i18n="other2.date">март – май 2026</span></div>
+                    <div class="case-tags"><span class="case-tag" data-i18n="other2.tag1">Аналитика</span><span class="case-tag" data-i18n="other2.tag2">Высшее образование</span><span class="case-tag" data-i18n="other2.tag3">IT-образование</span></div>
+                    <div class="work-description" data-i18n="other2.desc">Сравнительный анализ программ зарубежных IT-вузов, отчёт с визуализациями и гипотезами.</div>
+                    <div class="coming-soon"><i class="fas fa-hourglass-half"></i> <span data-i18n="other2.coming_soon">скоро появятся</span></div>
+                </div>
+                <div class="work-card" onclick="alert('Проект под NDA')">
+                    <h4 data-i18n="other3.title">ВШЭ</h4>
+                    <div class="work-meta"><span data-i18n="other3.date">февраль – апрель 2026</span></div>
+                    <div class="case-tags"><span class="case-tag" data-i18n="other3.tag1">Аналитика</span><span class="case-tag" data-i18n="other3.tag2">Высшее образование</span><span class="case-tag" data-i18n="other3.tag3">IT-образование</span></div>
+                    <div class="work-description" data-i18n="other3.desc">Экспертиза программы: проведение глубинных интервью, их транскрибирование, анализ с целью выявить сильные и слабые стороны ОП и представить их заказчику.</div>
+                    <div class="nda-badge"><i class="fas fa-lock"></i> <span data-i18n="other3.nda">Проект под NDA</span></div>
+                </div>
             </div>
-            <div class="work-card" onclick="alert('Central University details')">
-                <h4>Центральный университет</h4>
-                <div class="work-meta"><span data-i18n="other2.date">март – май 2026</span></div>
-                <div class="case-tags"><span class="case-tag" data-i18n="other2.tag1">Аналитика</span><span class="case-tag" data-i18n="other2.tag2">Высшее образование</span><span class="case-tag" data-i18n="other2.tag3">IT-образование</span></div>
-                <div class="work-description" data-i18n="other2.desc">Сравнительный анализ программ зарубежных IT-вузов, отчёт с визуализациями и гипотезами.</div>
-                <a class="work-material-link" href="https://disk.yandex.ru/d/ApRcYpqRJTWRXA" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-folder-open" style="color: #689abb;"></i> <span data-i18n="case.open_materials">Открыть материалы →</span> (soon)</a>
+            <div class="carousel-hint">
+                <i class="fas fa-arrow-right"></i>
+                <span data-i18n="carousel.swipe">Листайте вправо →</span>
             </div>
         </div>
     </section>
@@ -932,12 +1022,12 @@
         <h2 data-i18n="contact.title">Контакты</h2>
         <div class="contact-flex">
             <div class="contact-info">
-                <p data-i18n="contact.text">Есть проект или открытая позиция? Напишите мне — отвечаю быстро.</p>
+                <p data-i18n="contact.text">Готова обсудить любое предложение. Свяжитесь со мной:</p>
                 <div class="contact-item"><i class="fas fa-phone-alt"></i> <span>+7 (977) 110-86-61</span></div>
                 <div class="contact-item"><i class="fas fa-envelope"></i> <span>kartashevm-edtech@yandex.ru</span></div>
                 <div class="contact-item"><i class="fab fa-telegram-plane"></i> <span>@mash1naa</span></div>
                 <div class="resume-btn">
-                    <a href="#" class="btn btn-outline" onclick="alert('Resume PDF will be available later'); return false;"><i class="fas fa-download"></i> <span data-i18n="contact.resume">Скачать резюме</span></a>
+                    <a href="#" class="btn btn-outline" onclick="alert('Резюме (PDF) будет доступно позже'); return false;"><i class="fas fa-download"></i> <span data-i18n="contact.resume">Скачать резюме</span></a>
                 </div>
             </div>
         </div>
@@ -949,7 +1039,7 @@
     const translations = {
         ru: {
             'hero.name': 'Мария Карташева',
-            'hero.tagline': 'Педагогический дизайнер: от структуры до визуала',
+            'hero.tagline': 'Педагогический дизайнер',
             'hero.sub': 'Проектирую учебный опыт с нуля — от анализа аудитории до готового курса. Методично, системно, красиво — и с удовольствием.',
             'hero.cta1': 'Смотреть работы',
             'hero.cta2': 'Связаться',
@@ -961,8 +1051,20 @@
             'about.fact2': 'Магистратура ВШЭ — педагогический дизайн',
             'about.fact3': 'Курс Eduson для методистов',
             'about.fact4': '6 лет в преподавании и корпоративном обучении',
+            'about.vibecoding': 'Вайбкодинг LXD Hero',
+            'about.view_cert': 'Смотреть сертификат',
+            'carousel.swipe': 'Листайте вправо →',
             'skills.title': 'Навыки и инструменты',
-            'skills.tools': 'Инструменты',
+            'skills.skillset': 'Скиллсет',
+            'skills.methodology': 'Методология и проектирование',
+            'skills.bloom': 'Таксономия Блума–Андерсона',
+            'skills.architecture': 'Архитектура курса',
+            'skills.analysis': 'Анализ и исследования',
+            'skills.evaluation': 'Оценка обучения',
+            'skills.documentation': 'Документирование',
+            'skills.standards': 'Нормативная база',
+            'skills.additional': 'Дополнительно',
+            'skills.tools_title': 'Инструменты',
             'skills.design': 'Проектирование',
             'skills.design_tools': 'Miro,FigJam,SBoard,XMind',
             'skills.visual': 'Дизайн',
@@ -1009,8 +1111,8 @@
             'case2.step2': '<strong>Проектирование структуры программы</strong> — трёхэтапная модель: Знакомство → Погружение → Развитие.',
             'case2.step3': '<strong>Разработка уроков (этап «Знакомство»)</strong> — урок-исследование «Магия пузырьков» (флотация, 60 минут) и финальная встреча — мини-конкурс инноваций с презентацией идей.',
             'case2.step4': '<strong>Методический пакет</strong> — полный комплект материалов: сценарии, презентации, оценочные листы.',
-            'case2.testimonial': '«Могу отметить глубокое погружение в проект, самостоятельность…» — Араксия Манучарова, Highland Gold',
             'case2.result': 'Профориентационная программа с методическим пакетом, выстраивающая путь от нулевого интереса к осознанному выбору профессии, с карьерной возможностью от компании.',
+            'case3.title': 'ВШЭ',
             'case3.date': 'март – апрель 2026',
             'case3.tag1': 'Разработка контента',
             'case3.tag2': 'Высшее образование',
@@ -1022,18 +1124,26 @@
             'case3.step2': '<strong>Универсализация формулировок</strong> — разработка трёх универсальных формулировок для каждого элемента курса, соответствующих всем требованиям.',
             'case3.step3': '<strong>Оформление кейсов и заданий</strong> — приведение всех материалов к единому шаблону.',
             'case3.step4': '<strong>Проверка логики курса</strong> — сохранение целостности учебной структуры после изменений.',
-            'case3.testimonial': '«…» — Андреева Анастасия, куратор, НИУ ВШЭ',
             'case3.result': 'Курс доработан: неактуальные сервисы заменены, формулировки универсализированы, контент приведён к единому стандарту без нарушения учебной логики.',
             'other1.date': 'октябрь – декабрь 2025',
             'other1.tag1': 'Рефакторинг',
             'other1.tag2': 'EdTech',
             'other1.tag3': 'Цифровая трансформация',
             'other1.desc': 'Рефакторинг курса «Лидер цифровой трансформации»: аудит, методические рекомендации, пересборка модуля.',
+            'other2.title': 'Центральный университет',
             'other2.date': 'март – май 2026',
             'other2.tag1': 'Аналитика',
             'other2.tag2': 'Высшее образование',
             'other2.tag3': 'IT-образование',
             'other2.desc': 'Сравнительный анализ программ зарубежных IT-вузов, отчёт с визуализациями и гипотезами.',
+            'other2.coming_soon': 'скоро появятся',
+            'other3.title': 'ВШЭ',
+            'other3.date': 'февраль – апрель 2026',
+            'other3.tag1': 'Аналитика',
+            'other3.tag2': 'Высшее образование',
+            'other3.tag3': 'IT-образование',
+            'other3.desc': 'Экспертиза программы: проведение глубинных интервью, их транскрибирование, анализ с целью выявить сильные и слабые стороны ОП и представить их заказчику.',
+            'other3.nda': 'Проект под NDA',
             'roadmap.title': 'Как я работаю',
             'roadmap.step1_title': 'Анализ',
             'roadmap.step1_desc': 'Изучаю аудиторию, конкурентов и рынок — прежде чем думать о форме.',
@@ -1065,12 +1175,12 @@
             'help6.sub': 'Рынок, зарубежный опыт',
             'help6.desc': 'Desk research, сравнительные таблицы, визуализация данных, гипотезы для продуктовых команд.',
             'contact.title': 'Контакты',
-            'contact.text': 'Есть проект или открытая позиция? Напишите мне — отвечаю быстро.',
+            'contact.text': 'Готова обсудить любое предложение. Свяжитесь со мной:',
             'contact.resume': 'Скачать резюме'
         },
         en: {
             'hero.name': 'Maria Kartasheva',
-            'hero.tagline': 'Instructional Designer: from structure to visuals',
+            'hero.tagline': 'Instructional Designer',
             'hero.sub': 'I design learning experiences from scratch — from audience analysis to a complete course. Methodical, systematic, beautiful — and with pleasure.',
             'hero.cta1': 'View works',
             'hero.cta2': 'Contact',
@@ -1082,8 +1192,20 @@
             'about.fact2': 'Master\'s degree, HSE — Instructional Design',
             'about.fact3': 'Eduson course for methodologists',
             'about.fact4': '6 years in teaching and corporate training',
+            'about.vibecoding': 'Vibecoding LXD Hero',
+            'about.view_cert': 'View certificate',
+            'carousel.swipe': 'Swipe right →',
             'skills.title': 'Skills & Tools',
-            'skills.tools': 'Tools',
+            'skills.skillset': 'Skillset',
+            'skills.methodology': 'Methodology & Design',
+            'skills.bloom': 'Bloom-Anderson Taxonomy',
+            'skills.architecture': 'Course Architecture',
+            'skills.analysis': 'Analysis & Research',
+            'skills.evaluation': 'Evaluation',
+            'skills.documentation': 'Documentation',
+            'skills.standards': 'Standards',
+            'skills.additional': 'Additional',
+            'skills.tools_title': 'Tools',
             'skills.design': 'Design & Structure',
             'skills.design_tools': 'Miro,FigJam,SBoard,XMind',
             'skills.visual': 'Visual Design',
@@ -1130,8 +1252,8 @@
             'case2.step2': '<strong>Program structure design</strong> — three-stage model: Introduction → Immersion → Development.',
             'case2.step3': '<strong>Lesson development (Stage "Introduction")</strong> — research lesson "Magic of Bubbles" (flotation, 60 min) and final meeting — mini innovation contest with idea presentations.',
             'case2.step4': '<strong>Methodological package</strong> — complete set: scripts, presentations, evaluation sheets.',
-            'case2.testimonial': '"I can note deep immersion in the project, independence…" — Araksia Manucharova, Project Curator, Highland Gold',
             'case2.result': 'Career guidance program with methodological package, building a path from zero interest to conscious career choice, with a real career opportunity from the company.',
+            'case3.title': 'HSE University',
             'case3.date': 'March – April 2026',
             'case3.tag1': 'Content development',
             'case3.tag2': 'Higher education',
@@ -1143,18 +1265,26 @@
             'case3.step2': '<strong>Universalization of wording</strong> — develop three universal formulations for each course element meeting all requirements.',
             'case3.step3': '<strong>Formatting cases and assignments</strong> — bring all materials to a single template.',
             'case3.step4': '<strong>Course logic check</strong> — preserve educational integrity after changes.',
-            'case3.testimonial': '"…" — Anastasia Andreeva, Project Curator, HSE University',
             'case3.result': 'Course refined: outdated services replaced, wording universalized, content standardized without breaking educational logic.',
             'other1.date': 'October – December 2025',
             'other1.tag1': 'Refactoring',
             'other1.tag2': 'EdTech',
             'other1.tag3': 'Digital transformation',
             'other1.desc': 'Refactoring of the course "Digital Transformation Leader": audit, methodological recommendations, module reassembly.',
+            'other2.title': 'Central University',
             'other2.date': 'March – May 2026',
             'other2.tag1': 'Analytics',
             'other2.tag2': 'Higher education',
             'other2.tag3': 'IT education',
             'other2.desc': 'Comparative analysis of programs of leading foreign IT universities, report with visualizations and hypotheses.',
+            'other2.coming_soon': 'coming soon',
+            'other3.title': 'HSE University',
+            'other3.date': 'February – April 2026',
+            'other3.tag1': 'Analytics',
+            'other3.tag2': 'Higher education',
+            'other3.tag3': 'IT education',
+            'other3.desc': 'Program expertise: conducting in-depth interviews, transcription, analysis to identify strengths and weaknesses of the educational program and present them to the client.',
+            'other3.nda': 'Project under NDA',
             'roadmap.title': 'How I work',
             'roadmap.step1_title': 'Analysis',
             'roadmap.step1_desc': 'I study the audience, competitors, and market — before thinking about form.',
@@ -1186,8 +1316,8 @@
             'help6.sub': 'Market, international experience, educational models',
             'help6.desc': 'Desk research and comparative analysis of educational products and programs: data collection, comparative tables, pattern identification, visualizations, hypotheses for strategic decisions.',
             'contact.title': 'Contacts',
-            'contact.text': 'Have a project or an open position? Write to me — I respond quickly.',
-            'contact.resume': 'Download resume'
+            'contact.text': 'Open to any proposal. Get in touch:',
+            'contact.resume': 'Download CV'
         }
     };
 
@@ -1207,7 +1337,6 @@
         document.querySelectorAll('.work-material-link span, .material-link span').forEach(el => {
             el.textContent = t['case.open_materials'];
         });
-        document.querySelector('.resume-btn .btn span').textContent = t['contact.resume'];
         document.querySelector('.footer-note').innerHTML = `© 2026 Maria Kartasheva · Instructional Designer`;
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.remove('active');
@@ -1258,24 +1387,27 @@
         applyLanguage(lang);
         renderHelpAccordions(lang);
         
-        // Меняем названия кейсов в зависимости от языка
+        // Update dynamic titles that are not handled by data-i18n
         const case2Title = document.querySelector('.accordion-case:nth-of-type(2) .case-title-section h3');
         const case3Title = document.querySelector('.accordion-case:nth-of-type(3) .case-title-section h3');
-        const workCard2Title = document.querySelector('.other-works-grid .work-card:last-child h4');
+        const workCard2Title = document.querySelector('.other-works-wrapper .work-card:nth-child(2) h4');
+        const workCard3Title = document.querySelector('.other-works-wrapper .work-card:nth-child(3) h4');
         
         if (lang === 'ru') {
             if (case2Title) case2Title.textContent = 'Highland Gold (Ареал)';
             if (case3Title) case3Title.textContent = 'ВШЭ';
             if (workCard2Title) workCard2Title.textContent = 'Центральный университет';
+            if (workCard3Title) workCard3Title.textContent = 'ВШЭ';
         } else {
             if (case2Title) case2Title.textContent = 'Highland Gold (Areal)';
             if (case3Title) case3Title.textContent = 'HSE University';
             if (workCard2Title) workCard2Title.textContent = 'Central University';
+            if (workCard3Title) workCard3Title.textContent = 'HSE University';
         }
     }
 
-    function initCarouselDrag() {
-        const slider = document.getElementById('factsCarousel');
+    function initCarouselDrag(sliderId) {
+        const slider = document.getElementById(sliderId);
         if (!slider) return;
         
         let isDown = false;
@@ -1328,7 +1460,8 @@
     document.addEventListener('DOMContentLoaded', () => {
         applyLanguage('ru');
         renderHelpAccordions('ru');
-        initCarouselDrag();
+        initCarouselDrag('factsCarousel');
+        initCarouselDrag('otherWorksCarousel');
 
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', () => {
